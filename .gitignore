@@ -4,3 +4,4 @@
 /config/app.php
 /tmp/*
 /logs/*
+/webroot/jquery-file-upload/*

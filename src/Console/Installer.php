@@ -26,7 +26,9 @@ class Installer
 
     public static function postUpdate(Event $event)
     {
-        define('DS', DIRECTORY_SEPARATOR);
+        if (!defined('DS')) {
+        	define('DS', DIRECTORY_SEPARATOR);
+        }
         
         $thisVendorDir = dirname(dirname(__DIR__));
         $vendorDir = dirname(dirname($thisVendorDir));
@@ -34,7 +36,7 @@ class Installer
         
         $io = $event->getIO();
         if (self::copyElfidnerFiles($thisVendorDir, $vendorDir)) {
-        	$io->write('Bluemp Jquery File Uupload files have been succesfully copied');
+        	$io->write('Bluemp Jquery File Upload files have been succesfully copied');
             return true;
         }
         
