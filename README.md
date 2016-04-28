@@ -4,7 +4,7 @@ This is a **Cakephp 3.x** vendor/plugin for blueimp jquery file upload widget ht
 
 ## Requirements
 1. Cakephp 3.x
-2. Blueimp Jquery File Upload (Requirement is added into composer)
+2. Blueimp Jquery File Upload  - https://github.com/blueimp/jQuery-File-Upload (dependency is added into the plugin's composer, so it wil be automaticaly installed)
 
 ## Installation
 1) Installation is done by composer: add the following into your main composer.json (inside require) and then run `composer update`
@@ -38,7 +38,34 @@ $this->loadHelper('CakephpJqueryFileUpload.JqueryFileUpload');
 'UploadHandler' => $vendorDir . '/blueimp/jquery-file-upload/server/php/UploadHandler.php',
 ```
 
-4) When initializing the fileupload in javascript set the url to your controller's some action and inside that action you can have
+4) Simple setup example
+
+```
+<?php echo $this->JqueryFileUpload->loadCss(); ?>
+<?php echo $this->JqueryFileUpload->loadScripts(); ?>
+
+<span class="btn btn-success fileinput-button">
+    <i class="glyphicon glyphicon-plus"></i>
+    <span>Select files...</span>
+    <!-- The file input field used as target for the file upload widget -->
+    <input id="fileupload" type="file" name="files[]" multiple>
+</span>
+
+<script type="text/javascript">
+$(function () {
+
+    // Initialize the jQuery File Upload widget:
+    $('#fileupload').fileupload({
+        // Uncomment the following to send cross-domain cookies:
+        //xhrFields: {withCredentials: true},
+        url: '/myController/myAction'
+    });
+    
+</script>
+```
+
+inside your `myAction`
+
 ```
 // example options
 $options = array(
