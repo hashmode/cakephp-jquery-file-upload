@@ -61,6 +61,7 @@ $(function () {
         url: '/myController/myAction'
     });
     
+});
 </script>
 ```
 
