@@ -49,15 +49,7 @@ class Installer
     {
         
         $jqueryFileUploadDir = $vendorDir . DS . 'blueimp' . DS . 'jquery-file-upload';
-        $webrootDir = $thisVendorDir . DS . 'webroot' . DS . 'jquery-file-upload';
-        
-        if (!file_exists($webrootDir)) {
-            if (mkdir($webrootDir)) {
-                ;
-            } else {
-                throw new Exception('Can not create jquery-file-upload directory');
-            }
-        }
+        $webrootDir = $thisVendorDir . DS . 'webroot';
         
         // copy files
         if (self::copyall($jqueryFileUploadDir . DS . 'css', $webrootDir . DS . 'css')
