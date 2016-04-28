@@ -7,7 +7,7 @@ This is a **Cakephp 3.x** vendor/plugin for blueimp jquery file upload widget ht
 2. Blueimp Jquery File Upload  - https://github.com/blueimp/jQuery-File-Upload (dependency is added into the plugin's composer, so it wil be automaticaly installed)
 
 ## Installation
-1) Installation is done by composer: add the following into your main composer.json (inside require) and then run `composer update`
+**1)** Installation is done by composer: add the following into your main composer.json (inside require) and then run `composer update`
 
 ```
 "hashmode/cakephp-jquery-file-upload": "~1.0"
@@ -20,7 +20,7 @@ To use the css and js files from the original library, they are being copied to 
 },
 ```
 
-2) Load Plugin from bootstrap, and add component into controller, helper - to AppView
+**2)** Load Plugin from bootstrap, and add component into controller, helper - to AppView
 ```
 // bootstrap.php
 Plugin::load('CakephpJqueryFileUpload');
@@ -32,13 +32,13 @@ $this->loadComponent('CakephpJqueryFileUpload.JqueryFileUpload');
 $this->loadHelper('CakephpJqueryFileUpload.JqueryFileUpload');
 ```
 
-3) The `UploadHelper` class should be added automatically into autoload classmap, however it does not, so the following should be manually added inside `vendor/composer/autoload_classmap.php` file - in the array that is being returned
+**3)** The `UploadHelper` class should be added automatically into autoload classmap, however it does not, so the following should be manually added inside `vendor/composer/autoload_classmap.php` file - in the array that is being returned
 
 ```
 'UploadHandler' => $vendorDir . '/blueimp/jquery-file-upload/server/php/UploadHandler.php',
 ```
 
-4) Simple setup example
+**4)** Simple setup example
 
 ```
 <?php echo $this->JqueryFileUpload->loadCss(); ?>
