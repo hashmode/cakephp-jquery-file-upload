@@ -13,7 +13,7 @@ class JqueryFileUploadComponent extends Component
     public function upload($options = null)
     {
         $upload = new \UploadHandler($options);
-        return $upload->response;
+        return $upload->get_response();
     }
 
 }
