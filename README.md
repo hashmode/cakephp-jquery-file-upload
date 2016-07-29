@@ -32,12 +32,13 @@ $this->loadComponent('CakephpJqueryFileUpload.JqueryFileUpload');
 $this->loadHelper('CakephpJqueryFileUpload.JqueryFileUpload');
 ```
 
-**3)** To add the `UploadHelper` class to autoload classmap, add this into your main composer - under `autoload`, save level as `psr-4`
+**3)** To add the `UploadHelper` class to autoload classmap, add this into your main composer - under `autoload`, same level as `psr-4`
 ```
 "classmap": [
 	"vendor/blueimp/jquery-file-upload/server/php"
 ]        
 ```
+and run `composer dump-autoload`
 
 **4)** Simple setup example
 
