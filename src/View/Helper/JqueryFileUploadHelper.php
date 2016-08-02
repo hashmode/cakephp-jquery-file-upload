@@ -18,9 +18,12 @@ class JqueryFileUploadHelper extends Helper
 
     public function loadCss()
     {
-        return $this->Html->css('CakephpJqueryFileUpload.jquery.fileupload-ui.css');
+        $css = [
+            'CakephpJqueryFileUpload.jquery.fileupload.css',
+            'CakephpJqueryFileUpload.jquery.fileupload-ui.css',
+        ];
+        return $this->Html->css($css);
     }
-
     
     /** 
      * 
@@ -28,10 +31,10 @@ class JqueryFileUploadHelper extends Helper
      */
     public function loadScripts($ui = true)
     {
-        $scripts = array(
+        $scripts = [
             'CakephpJqueryFileUpload.jquery.iframe-transport.js',
             'CakephpJqueryFileUpload.jquery.fileupload.js',
-        );
+        ];
         
         if ($ui) {
             array_unshift($scripts, 'CakephpJqueryFileUpload.vendor/jquery.ui.widget.js');
